@@ -21,6 +21,11 @@
 		B3C1095B191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
 		B3C10963191562C1004DFE05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3C10961191562C1004DFE05 /* InfoPlist.strings */; };
 		B3C10965191562C1004DFE05 /* RaabeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C10964191562C1004DFE05 /* RaabeAppTests.m */; };
+		B3C1097019157C74004DFE05 /* RaabeAppVertretungsplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1096F19157C74004DFE05 /* RaabeAppVertretungsplanViewController.m */; };
+		B3C1097319157D24004DFE05 /* RaabeAppVertretung.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1097219157D24004DFE05 /* RaabeAppVertretung.m */; };
+		B3C109761916533B004DFE05 /* RaabeAppVertretungCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C109751916533B004DFE05 /* RaabeAppVertretungCell.m */; };
+		B3C109791919602D004DFE05 /* RaabeAppDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C109781919602D004DFE05 /* RaabeAppDetailViewController.m */; };
+		B3C1097C19197363004DFE05 /* RaabeAppGenericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1097B19197363004DFE05 /* RaabeAppGenericTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,16 @@
 		B3C10960191562C1004DFE05 /* RaabeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaabeAppTests-Info.plist"; sourceTree = "<group>"; };
 		B3C10962191562C1004DFE05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3C10964191562C1004DFE05 /* RaabeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaabeAppTests.m; sourceTree = "<group>"; };
+		B3C1096E19157C74004DFE05 /* RaabeAppVertretungsplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplanViewController.h; sourceTree = "<group>"; };
+		B3C1096F19157C74004DFE05 /* RaabeAppVertretungsplanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungsplanViewController.m; sourceTree = "<group>"; };
+		B3C1097119157D24004DFE05 /* RaabeAppVertretung.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretung.h; sourceTree = "<group>"; };
+		B3C1097219157D24004DFE05 /* RaabeAppVertretung.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretung.m; sourceTree = "<group>"; };
+		B3C109741916533B004DFE05 /* RaabeAppVertretungCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungCell.h; sourceTree = "<group>"; };
+		B3C109751916533B004DFE05 /* RaabeAppVertretungCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungCell.m; sourceTree = "<group>"; };
+		B3C109771919602D004DFE05 /* RaabeAppDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppDetailViewController.h; sourceTree = "<group>"; };
+		B3C109781919602D004DFE05 /* RaabeAppDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppDetailViewController.m; sourceTree = "<group>"; };
+		B3C1097A19197363004DFE05 /* RaabeAppGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppGenericTableViewController.h; sourceTree = "<group>"; };
+		B3C1097B19197363004DFE05 /* RaabeAppGenericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppGenericTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +130,16 @@
 				B3C10948191562C1004DFE05 /* RaabeAppAppDelegate.h */,
 				B3C10949191562C1004DFE05 /* RaabeAppAppDelegate.m */,
 				B3C1094B191562C1004DFE05 /* Main.storyboard */,
+				B3C1097119157D24004DFE05 /* RaabeAppVertretung.h */,
+				B3C1097219157D24004DFE05 /* RaabeAppVertretung.m */,
+				B3C1096E19157C74004DFE05 /* RaabeAppVertretungsplanViewController.h */,
+				B3C1096F19157C74004DFE05 /* RaabeAppVertretungsplanViewController.m */,
+				B3C1097A19197363004DFE05 /* RaabeAppGenericTableViewController.h */,
+				B3C1097B19197363004DFE05 /* RaabeAppGenericTableViewController.m */,
+				B3C109771919602D004DFE05 /* RaabeAppDetailViewController.h */,
+				B3C109781919602D004DFE05 /* RaabeAppDetailViewController.m */,
+				B3C109741916533B004DFE05 /* RaabeAppVertretungCell.h */,
+				B3C109751916533B004DFE05 /* RaabeAppVertretungCell.m */,
 				B3C1094E191562C1004DFE05 /* RaabeAppViewController.h */,
 				B3C1094F191562C1004DFE05 /* RaabeAppViewController.m */,
 				B3C10951191562C1004DFE05 /* Images.xcassets */,
@@ -251,8 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C1094A191562C1004DFE05 /* RaabeAppAppDelegate.m in Sources */,
+				B3C1097019157C74004DFE05 /* RaabeAppVertretungsplanViewController.m in Sources */,
 				B3C10946191562C1004DFE05 /* main.m in Sources */,
+				B3C109761916533B004DFE05 /* RaabeAppVertretungCell.m in Sources */,
+				B3C1097319157D24004DFE05 /* RaabeAppVertretung.m in Sources */,
+				B3C109791919602D004DFE05 /* RaabeAppDetailViewController.m in Sources */,
 				B3C10950191562C1004DFE05 /* RaabeAppViewController.m in Sources */,
+				B3C1097C19197363004DFE05 /* RaabeAppGenericTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

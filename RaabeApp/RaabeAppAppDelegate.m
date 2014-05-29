@@ -7,12 +7,112 @@
 //
 
 #import "RaabeAppAppDelegate.h"
+#import "RaabeAppVertretung.h"
+#import "RaabeAppVertretungsplanViewController.h"
 
 @implementation RaabeAppAppDelegate
+{
+    NSMutableArray *_vertretungen;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // BEGIN hardcoded demo content
+    _vertretungen = [NSMutableArray arrayWithCapacity:20];
+    
+    RaabeAppVertretung *vertretung = [[RaabeAppVertretung alloc] init];
+    vertretung.datum = @"21. Dezember 2012";
+    vertretung.stunde = @"1-2";
+    vertretung.absenterLehrer = @"Ah";
+    vertretung.vtrLehrer = @"Ah";
+    vertretung.fach = @"De";
+    vertretung.vtrFach = @"De";
+    vertretung.raum = @"153a";
+    vertretung.vtrRaum = @"---";
+    vertretung.klasse = @"10G3";
+    vertretung.vtrText = @"";
+    vertretung.vtrArt = @"Entfall";
+    [_vertretungen addObject:vertretung];
+    
+    vertretung = [[RaabeAppVertretung alloc] init];
+    vertretung.datum = @"21. Dezember 2012";
+    vertretung.stunde = @"3";
+    vertretung.absenterLehrer = @"Hk";
+    vertretung.vtrLehrer = @"Pz";
+    vertretung.fach = @"Mu";
+    vertretung.vtrFach = @"Mu";
+    vertretung.raum = @"129b";
+    vertretung.vtrRaum = @"131";
+    vertretung.klasse = @"10G3";
+    vertretung.vtrText = @"";
+    vertretung.vtrArt = @"Vertretung";
+    [_vertretungen addObject:vertretung];
+    
+    vertretung = [[RaabeAppVertretung alloc] init];
+    vertretung.datum = @"21. Dezember 2012";
+    vertretung.stunde = @"1-2";
+    vertretung.absenterLehrer = @"Sn";
+    vertretung.vtrLehrer = @"Sn";
+    vertretung.fach = @"Ma";
+    vertretung.vtrFach = @"Ma";
+    vertretung.raum = @"159";
+    vertretung.vtrRaum = @"---";
+    vertretung.klasse = @"10G4";
+    vertretung.vtrText = @"Eigenständiges Arbeiten";
+    vertretung.vtrArt = @"Entfall";
+    [_vertretungen addObject:vertretung];
+    
+    vertretung = [[RaabeAppVertretung alloc] init];
+    vertretung.datum = @"21. Dezember 2012";
+    vertretung.stunde = @"3";
+    vertretung.absenterLehrer = @"Sc";
+    vertretung.vtrLehrer = @"Ah";
+    vertretung.fach = @"Mu";
+    vertretung.vtrFach = @"Mu";
+    vertretung.raum = @"129b";
+    vertretung.vtrRaum = @"129b";
+    vertretung.klasse = @"10G4";
+    vertretung.vtrText = @"";
+    vertretung.vtrArt = @"Vertretung";
+    [_vertretungen addObject:vertretung];
+    
+    vertretung = [[RaabeAppVertretung alloc] init];
+    vertretung.datum = @"21. Dezember 2012";
+    vertretung.stunde = @"5-6";
+    vertretung.absenterLehrer = @"Sg";
+    vertretung.vtrLehrer = @"Sg";
+    vertretung.fach = @"De";
+    vertretung.vtrFach = @"De";
+    vertretung.raum = @"159";
+    vertretung.vtrRaum = @"141";
+    vertretung.klasse = @"10G4";
+    vertretung.vtrText = @"";
+    vertretung.vtrArt = @"Raum-Vertretung";
+    [_vertretungen addObject:vertretung];
+    
+    vertretung = [[RaabeAppVertretung alloc] init];
+    vertretung.datum = @"21. Dezember 2012";
+    vertretung.stunde = @"8-9";
+    vertretung.absenterLehrer = @"Sa";
+    vertretung.vtrLehrer = @"Wn";
+    vertretung.fach = @"Inf";
+    vertretung.vtrFach = @"Inf";
+    vertretung.raum = @"129a";
+    vertretung.vtrRaum = @"129a";
+    vertretung.klasse = @"11N1";
+    vertretung.vtrText = @"";
+    vertretung.vtrArt = @"Vertretung";
+    [_vertretungen addObject:vertretung];
+    
+    // END hardcoded demo content
+    
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UINavigationController *navigationController = [tabBarController viewControllers][1];
+    RaabeAppVertretungsplanViewController *vertretungsplanViewController = [navigationController viewControllers][0];
+    vertretungsplanViewController.vertretungen = _vertretungen;
+   
     return YES;
 }
 							
