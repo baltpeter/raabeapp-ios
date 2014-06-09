@@ -7,7 +7,6 @@
 //
 
 #import "RaabeAppVertretungsplanViewController.h"
-#import "RaabeAppVertretung.h"
 #import "RaabeAppVertretungCell.h"
 
 @implementation RaabeAppVertretungsplanViewController
@@ -19,24 +18,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.vertretungen count];
+    return [[self.vertretungsplan objectForKey:@"data"] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RaabeAppVertretungCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VertretungCell"];
     
-    RaabeAppVertretung *vertretung = (self.vertretungen)[indexPath.row];
+    NSDictionary *vertretung = [[self.vertretungsplan objectForKey:@"data"] objectAtIndex:indexPath.row];
     
-    cell.klasseLabel.text = vertretung.klasse;
-    cell.stundeLabel.text = vertretung.stunde;
-    cell.vtrLehrerLabel.text = vertretung.vtrLehrer;
-    cell.absenterLehrerLabel.text = vertretung.absenterLehrer;
-    cell.vtrRaumLabel.text = vertretung.vtrRaum;
-    cell.vtrFachLabel.text = vertretung.vtrFach;
+    cell.klasseLabel.text = [vertretung objectForKey:@"klassen"];
+    cell.stundeLabel.text = [vertretung objectForKey:@"stunde"];
+    cell.vtrLehrerLabel.text = [vertretung objectForKey:@"vtr_lehrer"];
+    cell.absenterLehrerLabel.text = [vertretung objectForKey:@"absenter_lehrer"];
+    cell.vtrRaumLabel.text = [vertretung objectForKey:@"vtr_raum"];
+    cell.vtrFachLabel.text = [vertretung objectForKey:@"fach"];
     
     UIImageView *vtrArtImg = (UIImageView *)[cell viewWithTag:101];
-    vtrArtImg.image = [self imageForVtrArt:vertretung.vtrArt];
+    vtrArtImg.image = [self imageForVtrArt:[[vertretung objectForKey:@"vtr_art"] objectForKey:@"color"]];
     
     return cell;
 }
@@ -51,8 +50,29 @@
         if([segue.identifier isEqualToString:@"segueFromVertretungsplantoDetailView"])
         {
             RaabeAppDetailViewController *controller = (RaabeAppDetailViewController *)segue.destinationViewController;
-            controller.vertretung = (self.vertretungen)[_selectedTableRow];
+            controller.vertretung = [[self.vertretungsplan objectForKey:@"data"] objectAtIndex:_selectedTableRow];
         }
+}
+
+- (void)reload
+{
+    RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
+    [vplan getVertretungsplanWithFilter:@""];
+    
+    _vertretungsplan = [vplan vertretungsplan];
+    
+    [self.tableView reloadData];
+}
+
+- (IBAction)reloadButtonPressed:(id)sender {
+    [self reload];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self reload];
 }
 
 @end

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B884E5DC-C550-4772-A671-A80F58CF6FF2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>RaabeApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B1E93AA5-B316-4D0A-A84E-F0D02E9F5692</key>
+		<string>ssh://git.my-server.in/baltpeter/raabeapp-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>RaabeApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B1E93AA5-B316-4D0A-A84E-F0D02E9F5692</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://git.my-server.in/baltpeter/raabeapp-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B1E93AA5-B316-4D0A-A84E-F0D02E9F5692</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B1E93AA5-B316-4D0A-A84E-F0D02E9F5692</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RaabeApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

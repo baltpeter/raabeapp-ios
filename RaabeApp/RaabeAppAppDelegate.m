@@ -7,8 +7,9 @@
 //
 
 #import "RaabeAppAppDelegate.h"
-#import "RaabeAppVertretung.h"
 #import "RaabeAppVertretungsplanViewController.h"
+// TEMP
+#import "RaabeAppVertretungsplan.h"
 
 @implementation RaabeAppAppDelegate
 {
@@ -18,101 +19,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-    // BEGIN hardcoded demo content
-    _vertretungen = [NSMutableArray arrayWithCapacity:20];
-    
-    RaabeAppVertretung *vertretung = [[RaabeAppVertretung alloc] init];
-    vertretung.datum = @"21. Dezember 2012";
-    vertretung.stunde = @"1-2";
-    vertretung.absenterLehrer = @"Ah";
-    vertretung.vtrLehrer = @"Ah";
-    vertretung.fach = @"De";
-    vertretung.vtrFach = @"De";
-    vertretung.raum = @"153a";
-    vertretung.vtrRaum = @"---";
-    vertretung.klasse = @"10G3";
-    vertretung.vtrText = @"";
-    vertretung.vtrArt = @"Entfall";
-    [_vertretungen addObject:vertretung];
-    
-    vertretung = [[RaabeAppVertretung alloc] init];
-    vertretung.datum = @"21. Dezember 2012";
-    vertretung.stunde = @"3";
-    vertretung.absenterLehrer = @"Hk";
-    vertretung.vtrLehrer = @"Pz";
-    vertretung.fach = @"Mu";
-    vertretung.vtrFach = @"Mu";
-    vertretung.raum = @"129b";
-    vertretung.vtrRaum = @"131";
-    vertretung.klasse = @"10G3";
-    vertretung.vtrText = @"";
-    vertretung.vtrArt = @"Vertretung";
-    [_vertretungen addObject:vertretung];
-    
-    vertretung = [[RaabeAppVertretung alloc] init];
-    vertretung.datum = @"21. Dezember 2012";
-    vertretung.stunde = @"1-2";
-    vertretung.absenterLehrer = @"Sn";
-    vertretung.vtrLehrer = @"Sn";
-    vertretung.fach = @"Ma";
-    vertretung.vtrFach = @"Ma";
-    vertretung.raum = @"159";
-    vertretung.vtrRaum = @"---";
-    vertretung.klasse = @"10G4";
-    vertretung.vtrText = @"Eigenständiges Arbeiten";
-    vertretung.vtrArt = @"Entfall";
-    [_vertretungen addObject:vertretung];
-    
-    vertretung = [[RaabeAppVertretung alloc] init];
-    vertretung.datum = @"21. Dezember 2012";
-    vertretung.stunde = @"3";
-    vertretung.absenterLehrer = @"Sc";
-    vertretung.vtrLehrer = @"Ah";
-    vertretung.fach = @"Mu";
-    vertretung.vtrFach = @"Mu";
-    vertretung.raum = @"129b";
-    vertretung.vtrRaum = @"129b";
-    vertretung.klasse = @"10G4";
-    vertretung.vtrText = @"";
-    vertretung.vtrArt = @"Vertretung";
-    [_vertretungen addObject:vertretung];
-    
-    vertretung = [[RaabeAppVertretung alloc] init];
-    vertretung.datum = @"21. Dezember 2012";
-    vertretung.stunde = @"5-6";
-    vertretung.absenterLehrer = @"Sg";
-    vertretung.vtrLehrer = @"Sg";
-    vertretung.fach = @"De";
-    vertretung.vtrFach = @"De";
-    vertretung.raum = @"159";
-    vertretung.vtrRaum = @"141";
-    vertretung.klasse = @"10G4";
-    vertretung.vtrText = @"";
-    vertretung.vtrArt = @"Raum-Vertretung";
-    [_vertretungen addObject:vertretung];
-    
-    vertretung = [[RaabeAppVertretung alloc] init];
-    vertretung.datum = @"21. Dezember 2012";
-    vertretung.stunde = @"8-9";
-    vertretung.absenterLehrer = @"Sa";
-    vertretung.vtrLehrer = @"Wn";
-    vertretung.fach = @"Inf";
-    vertretung.vtrFach = @"Inf";
-    vertretung.raum = @"129a";
-    vertretung.vtrRaum = @"129a";
-    vertretung.klasse = @"11N1";
-    vertretung.vtrText = @"";
-    vertretung.vtrArt = @"Vertretung";
-    [_vertretungen addObject:vertretung];
-    
-    // END hardcoded demo content
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
-    UINavigationController *navigationController = [tabBarController viewControllers][1];
-    RaabeAppVertretungsplanViewController *vertretungsplanViewController = [navigationController viewControllers][0];
-    vertretungsplanViewController.vertretungen = _vertretungen;
-   
+    UITabBar *tabBar = tabBarController.tabBar;
+    [tabBar setTintColor:[UIColor redColor]];
+    
+    UITabBarItem *homeTabBarItem = [tabBar.items objectAtIndex:0];
+    UITabBarItem *vertretungsplanTabBarItem = [tabBar.items objectAtIndex:1];
+    UITabBarItem *aboutTabBarItem = [tabBar.items objectAtIndex:2];
+    
+    [homeTabBarItem initWithTitle:@"Home" image:[UIImage imageNamed:@"home"] selectedImage:nil];
+    [vertretungsplanTabBarItem initWithTitle:@"Vertretungsplan" image:[UIImage imageNamed:@"vertretungsplan"] selectedImage:nil];
+    [aboutTabBarItem initWithTitle:@"Über" image:[UIImage imageNamed:@"about"] selectedImage:nil];
+//    UINavigationController *navigationController = [tabBarController viewControllers][1];
+//    RaabeAppVertretungsplanViewController *vertretungsplanViewController = [navigationController viewControllers][0];
+//    vertretungsplanViewController.vertretungen = _vertretungen;
+    
     return YES;
 }
 							
@@ -136,6 +59,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

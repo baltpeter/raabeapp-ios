@@ -8,11 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "RaabeAppGenericTableViewController.h"
-#include "RaabeAppVertretung.h"
 
 @interface RaabeAppDetailViewController : RaabeAppGenericTableViewController
 
-@property (nonatomic) RaabeAppVertretung *vertretung;
-@property (nonatomic) NSInteger currentRow;
+@property (weak, nonatomic) IBOutlet UILabel *stundeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *vertreterLabel;
+@property (weak, nonatomic) IBOutlet UILabel *artLabel;
+@property (weak, nonatomic) IBOutlet UILabel *klassenLabel;
+@property (weak, nonatomic) IBOutlet UILabel *raumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fachLabel;
+@property (weak, nonatomic) IBOutlet UILabel *absenterLehrerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *leNachLabel;
+@property (weak, nonatomic) IBOutlet UILabel *vtrTextLabel;
+
+@property (nonatomic, strong) NSDictionary *vertretung;
 
 @end

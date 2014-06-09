@@ -1,0 +1,120 @@
+
+/* Class = "IBUILabel"; text = "Klasse(n)"; ObjectID = "2Z5-6s-LqM"; */
+"2Z5-6s-LqM.text" = "Klasse(n)";
+
+/* Class = "IBUILabel"; text = "Ah"; ObjectID = "3SD-7J-jKp"; */
+"3SD-7J-jKp.text" = "Ah";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "5x6-EG-p8H"; */
+"5x6-EG-p8H.text" = "--";
+
+/* Class = "IBUINavigationItem"; title = "Home"; ObjectID = "7DL-2T-VSR"; */
+"7DL-2T-VSR.title" = "Home";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "7x6-KN-2tY"; */
+"7x6-KN-2tY.text" = "--";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "9Ki-nw-Gc9"; */
+"9Ki-nw-Gc9.text" = "--";
+
+/* Class = "IBUILabel"; text = "Ah"; ObjectID = "9wL-Yv-cxz"; */
+"9wL-Yv-cxz.text" = "Ah";
+
+/* Class = "IBUILabel"; text = "(Lehrer)"; ObjectID = "Ca6-oS-5Ha"; */
+"Ca6-oS-5Ha.text" = "(Lehrer)";
+
+/* Class = "IBUIViewController"; title = "RaabeApp"; ObjectID = "FaY-sJ-iWe"; */
+"FaY-sJ-iWe.title" = "RaabeApp";
+
+/* Class = "IBUILabel"; text = "SPH"; ObjectID = "JGw-my-u5D"; */
+"JGw-my-u5D.text" = "SPH";
+
+/* Class = "IBUILabel"; text = "Fach"; ObjectID = "JUA-ox-WQ8"; */
+"JUA-ox-WQ8.text" = "Fach";
+
+/* Class = "IBUILabel"; text = "---"; ObjectID = "Pkj-AW-DHk"; */
+"Pkj-AW-DHk.text" = "---";
+
+/* Class = "IBUILabel"; text = "Ah"; ObjectID = "Szd-wO-O2F"; */
+"Szd-wO-O2F.text" = "Ah";
+
+/* Class = "IBUILabel"; text = "10G4"; ObjectID = "UAe-N0-x3l"; */
+"UAe-N0-x3l.text" = "10G4";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "UY3-T6-Ad9"; */
+"UY3-T6-Ad9.text" = "--";
+
+/* Class = "IBUILabel"; text = "Vertreter"; ObjectID = "ZTB-Ua-ug2"; */
+"ZTB-Ua-ug2.text" = "Vertreter";
+
+/* Class = "IBUITabBarItem"; title = "Info"; ObjectID = "aTv-e9-Cg6"; */
+"aTv-e9-Cg6.title" = "Info";
+
+/* Class = "IBUIViewController"; title = "Über"; ObjectID = "bLY-ev-ce5"; */
+"bLY-ev-ce5.title" = "Über";
+
+/* Class = "IBUILabel"; text = "Art"; ObjectID = "bpV-Vb-U5D"; */
+"bpV-Vb-U5D.text" = "Art";
+
+/* Class = "IBUILabel"; text = "Vertretungstext"; ObjectID = "bpc-6R-O5U"; */
+"bpc-6R-O5U.text" = "Vertretungstext";
+
+/* Class = "IBUILabel"; text = "Ah"; ObjectID = "c9h-AG-D3V"; */
+"c9h-AG-D3V.text" = "Ah";
+
+/* Class = "IBUILabel"; text = "(Le.) nach"; ObjectID = "dso-DB-vzN"; */
+"dso-DB-vzN.text" = "(Le.) nach";
+
+/* Class = "IBUITabBarItem"; title = "Home"; ObjectID = "gYG-Pc-kmI"; */
+"gYG-Pc-kmI.title" = "Home";
+
+/* Class = "IBUILabel"; text = "Raum"; ObjectID = "gdQ-n6-Toi"; */
+"gdQ-n6-Toi.text" = "Raum";
+
+/* Class = "IBUITextView"; text = "ACHTUNG: Die Umwelt AG fällt heute aus, hat schon stattgefunden am 26.3.14!\n\nAbwesende Klassen: 12G1, 12K1, 12N1, 12N2, 12S1\nBlockierte Räume: S023, S025\nBetroffene Lehrer: Hu, Mr, Wr"; ObjectID = "h7B-c2-Cwh"; */
+"h7B-c2-Cwh.text" = "ACHTUNG: Die Umwelt AG fällt heute aus, hat schon stattgefunden am 26.3.14!\n\nAbwesende Klassen: 12G1, 12K1, 12N1, 12N2, 12S1\nBlockierte Räume: S023, S025\nBetroffene Lehrer: Hu, Mr, Wr";
+
+/* Class = "IBUINavigationItem"; title = "Vertretungsplan"; ObjectID = "iC7-9J-X2s"; */
+"iC7-9J-X2s.title" = "Vertretungsplan";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "iil-8y-Xcr"; */
+"iil-8y-Xcr.text" = "--";
+
+/* Class = "IBUILabel"; text = "10-11"; ObjectID = "jHv-zr-Amp"; */
+"jHv-zr-Amp.text" = "10-11";
+
+/* Class = "IBUINavigationItem"; title = "Details"; ObjectID = "jjY-QP-yOa"; */
+"jjY-QP-yOa.title" = "Details";
+
+/* Class = "IBUITabBarItem"; title = "Vertretungsplan"; ObjectID = "kIg-ll-dFV"; */
+"kIg-ll-dFV.title" = "Vertretungsplan";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "kpy-gm-LWJ"; */
+"kpy-gm-LWJ.text" = "--";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "lG1-9f-rSQ"; */
+"lG1-9f-rSQ.text" = "--";
+
+/* Class = "IBUILabel"; text = "10G4"; ObjectID = "mZv-hS-c5w"; */
+"mZv-hS-c5w.text" = "10G4";
+
+/* Class = "IBUILabel"; text = "Stunde"; ObjectID = "pkS-H8-Iwh"; */
+"pkS-H8-Iwh.text" = "Stunde";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "qFV-JT-ppW"; */
+"qFV-JT-ppW.text" = "--";
+
+/* Class = "IBUILabel"; text = "--"; ObjectID = "rcd-X9-OHm"; */
+"rcd-X9-OHm.text" = "--";
+
+/* Class = "IBUILabel"; text = "---"; ObjectID = "rzI-27-8WY"; */
+"rzI-27-8WY.text" = "---";
+
+/* Class = "IBUILabel"; text = "10-11"; ObjectID = "t7h-Ir-mUg"; */
+"t7h-Ir-mUg.text" = "10-11";
+
+/* Class = "IBUILabel"; text = "SPH"; ObjectID = "wsq-XS-awz"; */
+"wsq-XS-awz.text" = "SPH";
+
+/* Class = "IBUILabel"; text = "21/12/2012"; ObjectID = "x2u-B2-yTI"; */
+"x2u-B2-yTI.text" = "21/12/2012";

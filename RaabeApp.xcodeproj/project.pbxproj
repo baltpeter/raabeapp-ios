@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B305C98119436B9F004581BA /* RaabeAppVertretungsplan.m in Sources */ = {isa = PBXBuildFile; fileRef = B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */; };
 		B3C1093A191562C1004DFE05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10939191562C1004DFE05 /* Foundation.framework */; };
 		B3C1093C191562C1004DFE05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093B191562C1004DFE05 /* CoreGraphics.framework */; };
 		B3C1093E191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
-		B3C10944191562C1004DFE05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3C10942191562C1004DFE05 /* InfoPlist.strings */; };
 		B3C10946191562C1004DFE05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C10945191562C1004DFE05 /* main.m */; };
 		B3C1094A191562C1004DFE05 /* RaabeAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C10949191562C1004DFE05 /* RaabeAppAppDelegate.m */; };
 		B3C1094D191562C1004DFE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C1094B191562C1004DFE05 /* Main.storyboard */; };
@@ -19,13 +19,16 @@
 		B3C10959191562C1004DFE05 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10958191562C1004DFE05 /* XCTest.framework */; };
 		B3C1095A191562C1004DFE05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10939191562C1004DFE05 /* Foundation.framework */; };
 		B3C1095B191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
-		B3C10963191562C1004DFE05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3C10961191562C1004DFE05 /* InfoPlist.strings */; };
 		B3C10965191562C1004DFE05 /* RaabeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C10964191562C1004DFE05 /* RaabeAppTests.m */; };
 		B3C1097019157C74004DFE05 /* RaabeAppVertretungsplanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1096F19157C74004DFE05 /* RaabeAppVertretungsplanViewController.m */; };
-		B3C1097319157D24004DFE05 /* RaabeAppVertretung.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1097219157D24004DFE05 /* RaabeAppVertretung.m */; };
 		B3C109761916533B004DFE05 /* RaabeAppVertretungCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C109751916533B004DFE05 /* RaabeAppVertretungCell.m */; };
 		B3C109791919602D004DFE05 /* RaabeAppDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C109781919602D004DFE05 /* RaabeAppDetailViewController.m */; };
 		B3C1097C19197363004DFE05 /* RaabeAppGenericTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1097B19197363004DFE05 /* RaabeAppGenericTableViewController.m */; };
+		B3F5CC3E1945B0C2000FC9C1 /* RaabeAppHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3F5CC3D1945B0C2000FC9C1 /* RaabeAppHomeViewController.m */; };
+		B3F5CC401945C26B000FC9C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3F5CC3F1945C26B000FC9C1 /* Settings.bundle */; };
+		B3F5CC531945D12A000FC9C1 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F5CC521945D12A000FC9C1 /* home.png */; };
+		B3F5CC551945D178000FC9C1 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F5CC541945D178000FC9C1 /* about.png */; };
+		B3F5CC591945D1F7000FC9C1 /* vertretungsplan.png in Resources */ = {isa = PBXBuildFile; fileRef = B3F5CC581945D1F7000FC9C1 /* vertretungsplan.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B305C97919435645004581BA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplan.h; sourceTree = "<group>"; };
+		B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungsplan.m; sourceTree = "<group>"; };
 		B3C10936191562C1004DFE05 /* RaabeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaabeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C10939191562C1004DFE05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3C1093B191562C1004DFE05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B3C1093D191562C1004DFE05 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B3C10941191562C1004DFE05 /* RaabeApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaabeApp-Info.plist"; sourceTree = "<group>"; };
-		B3C10943191562C1004DFE05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3C10945191562C1004DFE05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B3C10947191562C1004DFE05 /* RaabeApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaabeApp-Prefix.pch"; sourceTree = "<group>"; };
 		B3C10948191562C1004DFE05 /* RaabeAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaabeAppAppDelegate.h; sourceTree = "<group>"; };
@@ -56,18 +61,21 @@
 		B3C10957191562C1004DFE05 /* RaabeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaabeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C10958191562C1004DFE05 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B3C10960191562C1004DFE05 /* RaabeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaabeAppTests-Info.plist"; sourceTree = "<group>"; };
-		B3C10962191562C1004DFE05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B3C10964191562C1004DFE05 /* RaabeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaabeAppTests.m; sourceTree = "<group>"; };
 		B3C1096E19157C74004DFE05 /* RaabeAppVertretungsplanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplanViewController.h; sourceTree = "<group>"; };
 		B3C1096F19157C74004DFE05 /* RaabeAppVertretungsplanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungsplanViewController.m; sourceTree = "<group>"; };
-		B3C1097119157D24004DFE05 /* RaabeAppVertretung.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretung.h; sourceTree = "<group>"; };
-		B3C1097219157D24004DFE05 /* RaabeAppVertretung.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretung.m; sourceTree = "<group>"; };
 		B3C109741916533B004DFE05 /* RaabeAppVertretungCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungCell.h; sourceTree = "<group>"; };
 		B3C109751916533B004DFE05 /* RaabeAppVertretungCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungCell.m; sourceTree = "<group>"; };
 		B3C109771919602D004DFE05 /* RaabeAppDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppDetailViewController.h; sourceTree = "<group>"; };
 		B3C109781919602D004DFE05 /* RaabeAppDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppDetailViewController.m; sourceTree = "<group>"; };
 		B3C1097A19197363004DFE05 /* RaabeAppGenericTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppGenericTableViewController.h; sourceTree = "<group>"; };
 		B3C1097B19197363004DFE05 /* RaabeAppGenericTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppGenericTableViewController.m; sourceTree = "<group>"; };
+		B3F5CC3C1945B0C2000FC9C1 /* RaabeAppHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppHomeViewController.h; sourceTree = "<group>"; };
+		B3F5CC3D1945B0C2000FC9C1 /* RaabeAppHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppHomeViewController.m; sourceTree = "<group>"; };
+		B3F5CC3F1945C26B000FC9C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		B3F5CC521945D12A000FC9C1 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		B3F5CC541945D178000FC9C1 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		B3F5CC581945D1F7000FC9C1 /* vertretungsplan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vertretungsplan.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 		B3C10938191562C1004DFE05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B305C97919435645004581BA /* libz.dylib */,
 				B3C10939191562C1004DFE05 /* Foundation.framework */,
 				B3C1093B191562C1004DFE05 /* CoreGraphics.framework */,
 				B3C1093D191562C1004DFE05 /* UIKit.framework */,
@@ -127,11 +136,13 @@
 		B3C1093F191562C1004DFE05 /* RaabeApp */ = {
 			isa = PBXGroup;
 			children = (
+				B3F5CC431945CE4F000FC9C1 /* res */,
+				B3F5CC3F1945C26B000FC9C1 /* Settings.bundle */,
 				B3C10948191562C1004DFE05 /* RaabeAppAppDelegate.h */,
 				B3C10949191562C1004DFE05 /* RaabeAppAppDelegate.m */,
+				B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */,
+				B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */,
 				B3C1094B191562C1004DFE05 /* Main.storyboard */,
-				B3C1097119157D24004DFE05 /* RaabeAppVertretung.h */,
-				B3C1097219157D24004DFE05 /* RaabeAppVertretung.m */,
 				B3C1096E19157C74004DFE05 /* RaabeAppVertretungsplanViewController.h */,
 				B3C1096F19157C74004DFE05 /* RaabeAppVertretungsplanViewController.m */,
 				B3C1097A19197363004DFE05 /* RaabeAppGenericTableViewController.h */,
@@ -140,6 +151,8 @@
 				B3C109781919602D004DFE05 /* RaabeAppDetailViewController.m */,
 				B3C109741916533B004DFE05 /* RaabeAppVertretungCell.h */,
 				B3C109751916533B004DFE05 /* RaabeAppVertretungCell.m */,
+				B3F5CC3C1945B0C2000FC9C1 /* RaabeAppHomeViewController.h */,
+				B3F5CC3D1945B0C2000FC9C1 /* RaabeAppHomeViewController.m */,
 				B3C1094E191562C1004DFE05 /* RaabeAppViewController.h */,
 				B3C1094F191562C1004DFE05 /* RaabeAppViewController.m */,
 				B3C10951191562C1004DFE05 /* Images.xcassets */,
@@ -152,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				B3C10941191562C1004DFE05 /* RaabeApp-Info.plist */,
-				B3C10942191562C1004DFE05 /* InfoPlist.strings */,
 				B3C10945191562C1004DFE05 /* main.m */,
 				B3C10947191562C1004DFE05 /* RaabeApp-Prefix.pch */,
 			);
@@ -172,9 +184,18 @@
 			isa = PBXGroup;
 			children = (
 				B3C10960191562C1004DFE05 /* RaabeAppTests-Info.plist */,
-				B3C10961191562C1004DFE05 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B3F5CC431945CE4F000FC9C1 /* res */ = {
+			isa = PBXGroup;
+			children = (
+				B3F5CC581945D1F7000FC9C1 /* vertretungsplan.png */,
+				B3F5CC541945D178000FC9C1 /* about.png */,
+				B3F5CC521945D12A000FC9C1 /* home.png */,
+			);
+			name = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +275,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3F5CC401945C26B000FC9C1 /* Settings.bundle in Resources */,
+				B3F5CC531945D12A000FC9C1 /* home.png in Resources */,
 				B3C10952191562C1004DFE05 /* Images.xcassets in Resources */,
-				B3C10944191562C1004DFE05 /* InfoPlist.strings in Resources */,
 				B3C1094D191562C1004DFE05 /* Main.storyboard in Resources */,
+				B3F5CC591945D1F7000FC9C1 /* vertretungsplan.png in Resources */,
+				B3F5CC551945D178000FC9C1 /* about.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +288,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C10963191562C1004DFE05 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,12 +300,13 @@
 			files = (
 				B3C1094A191562C1004DFE05 /* RaabeAppAppDelegate.m in Sources */,
 				B3C1097019157C74004DFE05 /* RaabeAppVertretungsplanViewController.m in Sources */,
+				B3F5CC3E1945B0C2000FC9C1 /* RaabeAppHomeViewController.m in Sources */,
 				B3C10946191562C1004DFE05 /* main.m in Sources */,
 				B3C109761916533B004DFE05 /* RaabeAppVertretungCell.m in Sources */,
-				B3C1097319157D24004DFE05 /* RaabeAppVertretung.m in Sources */,
 				B3C109791919602D004DFE05 /* RaabeAppDetailViewController.m in Sources */,
 				B3C10950191562C1004DFE05 /* RaabeAppViewController.m in Sources */,
 				B3C1097C19197363004DFE05 /* RaabeAppGenericTableViewController.m in Sources */,
+				B305C98119436B9F004581BA /* RaabeAppVertretungsplan.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,28 +329,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3C10942191562C1004DFE05 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3C10943191562C1004DFE05 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		B3C1094B191562C1004DFE05 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B3C1094C191562C1004DFE05 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B3C10961191562C1004DFE05 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3C10962191562C1004DFE05 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -487,6 +495,7 @@
 				B3C1096A191562C1004DFE05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B3C1096B191562C1004DFE05 /* Build configuration list for PBXNativeTarget "RaabeAppTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +504,7 @@
 				B3C1096D191562C1004DFE05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

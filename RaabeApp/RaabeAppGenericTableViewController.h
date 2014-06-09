@@ -10,8 +10,6 @@
 
 @interface RaabeAppGenericTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSDictionary *vtrArtToUiColor;
-
-- (UIImage *)imageForVtrArt:(NSString *)vtrArt;
+- (UIImage *)imageForVtrArt:(NSString *)vtrColor;
 
 @end

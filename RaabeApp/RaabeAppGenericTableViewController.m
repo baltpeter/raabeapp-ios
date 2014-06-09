@@ -12,28 +12,14 @@
 
 - (void) viewDidLoad
 {
-    _vtrArtToUiColor = [[NSDictionary alloc] initWithObjectsAndKeys:
-                        [UIColor colorWithRed:0.906 green:0.298 blue:0.235 alpha:1], @"Entfall",
-                        [UIColor colorWithRed:0.906 green:0.298 blue:0.235 alpha:1], @"Betreuung",
-                        [UIColor colorWithRed:0.89 green:0.267 blue:0.584 alpha:1], @"Sondereinsatz",
-                        [UIColor colorWithRed:0.18 green:0.8 blue:0.443 alpha:1], @"verlegt",
-                        [UIColor colorWithRed:0.18 green:0.8 blue:0.443 alpha:1], @"verlegt von",
-                        [UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1], @"Tausch",
-                        [UIColor colorWithRed:0.925 green:0.941 blue:0.945 alpha:1], @"Freisetzung",
-                        [UIColor colorWithRed:0.945 green:0.769 blue:0.059 alpha:1], @"Teil-Vertretung",
-                        [UIColor colorWithRed:0.584 green:0.647 blue:0.651 alpha:1], @"Raum-Vertretung",
-                        [UIColor colorWithRed:0.204 green:0.596 blue:0.859 alpha:1], @"Pausenaufsicht",
-                        [UIColor colorWithRed:0.102 green:0.737 blue:0.612 alpha:1], @"Lehrertausch",
-                        [UIColor colorWithRed:0.902 green:0.494 blue:0.133 alpha:1], @"Klausur",
-                        [UIColor colorWithRed:0.945 green:0.769 blue:0.059 alpha:1], @"Vertretung",
-                        nil];
+
 }
 
-- (UIImage *)imageForVtrArt:(NSString *)vtrArt
+- (UIImage *)imageForVtrArt:(NSString *)vtrColor
 {
 	UIGraphicsBeginImageContext(CGRectMake(0, 0, 25, 25).size);
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
-	[[_vtrArtToUiColor valueForKey:vtrArt] setFill];
+    [[self colorFromHexString:vtrColor] setFill];
     
 	CGRect circleRect = CGRectMake(0, 0,
                                    CGRectMake(0, 0, 25, 25).size.width,
@@ -45,6 +31,15 @@
 	UIGraphicsEndImageContext();
     
     return retImage;
+}
+
+// taken from http://stackoverflow.com/a/12397366
+- (UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 @end
