@@ -58,7 +58,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"segueFromVertretungsplantoDetailView"])
+    if([segue.identifier isEqualToString:@"segueFromHomeToDetailView"])
     {
         RaabeAppDetailViewController *controller = (RaabeAppDetailViewController *)segue.destinationViewController;
         controller.vertretung = [[self.vertretungsplan objectForKey:@"data"] objectAtIndex:_selectedTableRow];

@@ -138,7 +138,7 @@ Betroffene Lehrer: Hu, Mr, Wr</string>
                                             <outlet property="vtrFachLabel" destination="JGw-my-u5D" id="sGv-b5-BgB"/>
                                             <outlet property="vtrLehrerLabel" destination="3SD-7J-jKp" id="xle-xW-WEt"/>
                                             <outlet property="vtrRaumLabel" destination="rzI-27-8WY" id="MeL-t6-zGc"/>
-                                            <segue destination="ZsL-iu-3XK" kind="push" identifier="segueFromVertretungsplantoDetailView" id="WNO-8p-sV7"/>
+                                            <segue destination="ZsL-iu-3XK" kind="push" identifier="segueFromHomeToDetailView" id="WNO-8p-sV7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -280,7 +280,7 @@ Betroffene Lehrer: Hu, Mr, Wr</string>
                                     <outlet property="vtrFachLabel" destination="wsq-XS-awz" id="ZH8-bh-6D7"/>
                                     <outlet property="vtrLehrerLabel" destination="c9h-AG-D3V" id="dDh-sO-sMI"/>
                                     <outlet property="vtrRaumLabel" destination="Pkj-AW-DHk" id="NUc-8w-mHG"/>
-                                    <segue destination="ZsL-iu-3XK" kind="push" identifier="segueFromVertretungsplantoDetailView" id="WsR-Ba-2el"/>
+                                    <segue destination="ZsL-iu-3XK" kind="push" identifier="segueFromVertretungsplanToDetailView" id="WsR-Ba-2el"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -962,6 +962,6 @@ Diese App verwendet eine von Benjamin Altpeter und Lorenz Sieben entwickelte API
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WNO-8p-sV7"/>
+        <segue reference="WsR-Ba-2el"/>
     </inferredMetricsTieBreakers>
 </document>
