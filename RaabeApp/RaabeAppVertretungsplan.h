@@ -11,6 +11,9 @@
 @interface RaabeAppVertretungsplan : NSObject
 
 @property (nonatomic, strong) NSDictionary *vertretungsplan;
+@property (nonatomic, strong) NSMutableDictionary *sortedVertretungsplan;
+@property (nonatomic, strong) NSArray *sortedVertretungsplanKeys;
+@property (nonatomic) BOOL networkErrorAlertShown;
 
 - (void)getVertretungsplanWithFilter:(NSString *)filter;
 

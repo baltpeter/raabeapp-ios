@@ -56,15 +56,20 @@
 
 - (void)reload
 {
-    RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
-    [vplan getVertretungsplanWithFilter:@""];
-    
-    _vertretungsplan = [vplan vertretungsplan];
-    
-    [self.tableView reloadData];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^{
+        RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
+        [vplan getVertretungsplanWithFilter:@""];
+        
+        _vertretungsplan = [vplan vertretungsplan];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    });
 }
 
-- (IBAction)reloadButtonPressed:(id)sender {
+- (IBAction)reloadButtonPressed:(id)sender
+{
     [self reload];
 }
 

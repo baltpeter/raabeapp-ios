@@ -32,9 +32,6 @@
     [homeTabBarItem initWithTitle:@"Home" image:[UIImage imageNamed:@"home"] selectedImage:nil];
     [vertretungsplanTabBarItem initWithTitle:@"Vertretungsplan" image:[UIImage imageNamed:@"vertretungsplan"] selectedImage:nil];
     [aboutTabBarItem initWithTitle:@"Über" image:[UIImage imageNamed:@"about"] selectedImage:nil];
-//    UINavigationController *navigationController = [tabBarController viewControllers][1];
-//    RaabeAppVertretungsplanViewController *vertretungsplanViewController = [navigationController viewControllers][0];
-//    vertretungsplanViewController.vertretungen = _vertretungen;
     
     return YES;
 }

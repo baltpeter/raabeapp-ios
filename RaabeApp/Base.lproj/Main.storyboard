@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertretungen 2012-12-21 für 10g4, pz, se" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2u-B2-yTI">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertretungen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2u-B2-yTI">
                                 <rect key="frame" x="0.0" y="76" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -34,11 +34,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="109" id="HDN-Pu-ZYk"/>
                                 </constraints>
-                                <string key="text">ACHTUNG: Die Umwelt AG fällt heute aus, hat schon stattgefunden am 26.3.14!
-
-Abwesende Klassen: 12G1, 12K1, 12N1, 12N2, 12S1
-Blockierte Räume: S023, S025
-Betroffene Lehrer: Hu, Mr, Wr</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
@@ -962,6 +957,6 @@ Diese App verwendet eine von Benjamin Altpeter und Lorenz Sieben entwickelte API
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WsR-Ba-2el"/>
+        <segue reference="WNO-8p-sV7"/>
     </inferredMetricsTieBreakers>
 </document>

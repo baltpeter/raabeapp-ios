@@ -68,30 +68,40 @@
 - (void)reload
 {
     _errorLabel.text = @"";
-    RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
-    [vplan getVertretungsplanWithFilter:(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"]];
-    
-    _vertretungsplan = [vplan vertretungsplan];
-    
-    _informationenLabel.text = [[self.vertretungsplan objectForKey:@"info_data"] stringByReplacingOccurrencesOfString: @"\\n" withString: @"\n"];
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^{
+        RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
+        [vplan getVertretungsplanWithFilter:(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"]];
+        
+        _vertretungsplan = [vplan vertretungsplan];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [self reloadGui];
+        });
+    });
+}
+
+- (void) reloadGui
+{
+    _informationenLabel.text = [[self.vertretungsplan objectForKey:@"info_data"] stringByReplacingOccurrencesOfString: @";;" withString: @"\n"];
     [_homeTableView reloadData];
     
     if([[self.vertretungsplan objectForKey:@"data"] count] > 0) {
-        _datumLabel.text = [[[self.vertretungsplan objectForKey:@"data"] objectAtIndex:0] objectForKey:@"datum"];
+        _datumLabel.text = [NSString stringWithFormat:@"Vertretungen %@", [self.vertretungsplan objectForKey:@"date"]];
     }
     else {
         _datumLabel.text = @"";
-        if(![(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"] isEqual: @""]) {
-            _errorLabel.text = [NSString stringWithFormat:@"Keine Vertretungen für \"%@\".", (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"]];
+        if([(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"] isEqual: @""] || [(NSString *)[NSUserDefaults standardUserDefaults] valueForKey:@"filter"] == nil) {
+            _errorLabel.text = @"Keine Vertretungen.";
         }
         else {
-            _errorLabel.text = @"Keine Vertretungen.";
+            _errorLabel.text = [NSString stringWithFormat:@"Keine Vertretungen für \"%@\".", (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"]];
         }
         
     }
 }
 
-- (IBAction)reloadButtonPressed:(id)sender {
+- (IBAction)reloadButtonPressed:(id)sender
+{
     [self reload];
 }
 
