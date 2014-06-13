@@ -66,22 +66,24 @@
     }
     
     NSArray *vplanData = [_vertretungsplan objectForKey:@"data"];
+    NSMutableDictionary *sortedVertretungsplan = [[NSMutableDictionary alloc] init];
     
     for(int i = 0; i < vplanData.count; i++) {
-        if(![[[vplanData objectAtIndex:i] objectForKey:@"klassen"] isEqualToString:@""]) {
-            if([_sortedVertretungsplan objectForKey:[[vplanData objectAtIndex:i] objectForKey:@"klassen"]]) {
-                [[_sortedVertretungsplan objectForKey:[[vplanData objectAtIndex:i] objectForKey:@"klassen"]] addObject:[vplanData objectAtIndex:i]];
-                NSLog(@"already in array: %@", [[vplanData objectAtIndex:i] objectForKey:@"klassen"]);
-            }
-            else {
-                NSMutableArray *toInsert = [[NSMutableArray alloc] init];
-                [toInsert addObject:[vplanData objectAtIndex:i]];
-                NSLog(@"not in array: %@", [[vplanData objectAtIndex:i] objectForKey:@"klassen"]);
-                [_sortedVertretungsplan setObject:toInsert forKey:[[vplanData objectAtIndex:i] objectForKey:@"klassen"]];
-            }
+        NSString *klassen = [[vplanData objectAtIndex:i] objectForKey:@"klassen"];
+        if([klassen isEqualToString:@""]) {
+            klassen = @"--";
+        }
+        if([sortedVertretungsplan objectForKey:klassen]) {
+            [[sortedVertretungsplan objectForKey:klassen] addObject:[vplanData objectAtIndex:i]];
+        }
+        else {
+            NSMutableArray *toInsert = [[NSMutableArray alloc] init];
+            [toInsert addObject:[vplanData objectAtIndex:i]];
+            [sortedVertretungsplan setObject:toInsert forKey:klassen];
         }
     }
     
+    _sortedVertretungsplan = sortedVertretungsplan;
     _sortedVertretungsplanKeys = [_sortedVertretungsplan allKeys];
 }
 

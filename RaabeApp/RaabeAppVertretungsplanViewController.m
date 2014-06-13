@@ -13,21 +13,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return _sortedVertretungsplanKeys.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self.vertretungsplan objectForKey:@"data"] count];
+    return [[_sortedVertretungsplan objectForKey:[_sortedVertretungsplanKeys objectAtIndex:section]] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [_sortedVertretungsplanKeys objectAtIndex:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RaabeAppVertretungCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VertretungCell"];
     
-    NSDictionary *vertretung = [[self.vertretungsplan objectForKey:@"data"] objectAtIndex:indexPath.row];
+    NSDictionary *vertretung = [[_sortedVertretungsplan objectForKey:[_sortedVertretungsplanKeys objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
     
-    cell.klasseLabel.text = [vertretung objectForKey:@"klassen"];
     cell.stundeLabel.text = [vertretung objectForKey:@"stunde"];
     cell.vtrLehrerLabel.text = [vertretung objectForKey:@"vtr_lehrer"];
     cell.absenterLehrerLabel.text = [vertretung objectForKey:@"absenter_lehrer"];
@@ -43,6 +47,7 @@
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _selectedTableRow = indexPath.row;
+    _selectedTableSection = indexPath.section;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -50,7 +55,7 @@
         if([segue.identifier isEqualToString:@"segueFromVertretungsplanToDetailView"])
         {
             RaabeAppDetailViewController *controller = (RaabeAppDetailViewController *)segue.destinationViewController;
-            controller.vertretung = [[self.vertretungsplan objectForKey:@"data"] objectAtIndex:_selectedTableRow];
+            controller.vertretung = [[_sortedVertretungsplan objectForKey:[_sortedVertretungsplanKeys objectAtIndex:_selectedTableSection]] objectAtIndex:_selectedTableRow];
         }
 }
 
@@ -62,6 +67,8 @@
         [vplan getVertretungsplanWithFilter:@""];
         
         _vertretungsplan = [vplan vertretungsplan];
+        _sortedVertretungsplan = [vplan sortedVertretungsplan];
+        _sortedVertretungsplanKeys = [vplan sortedVertretungsplanKeys];
         dispatch_sync(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });

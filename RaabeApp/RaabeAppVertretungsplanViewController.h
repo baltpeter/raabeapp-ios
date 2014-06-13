@@ -14,6 +14,9 @@
 @interface RaabeAppVertretungsplanViewController : RaabeAppGenericTableViewController
 
 @property (nonatomic, strong) NSDictionary *vertretungsplan;
+@property (nonatomic, strong) NSMutableDictionary *sortedVertretungsplan;
+@property (nonatomic, strong) NSArray *sortedVertretungsplanKeys;
 @property (nonatomic) NSInteger selectedTableRow;
+@property (nonatomic) NSInteger selectedTableSection;
 
 @end

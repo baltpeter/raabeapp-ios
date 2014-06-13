@@ -15,7 +15,11 @@
 @interface RaabeAppHomeViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *vertretungsplan;
+@property (nonatomic, strong) NSMutableDictionary *sortedVertretungsplan;
+@property (nonatomic, strong) NSArray *sortedVertretungsplanKeys;
 @property (nonatomic) NSInteger selectedTableRow;
+@property (nonatomic) NSInteger selectedTableSection;
+
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 @property (weak, nonatomic) IBOutlet UITextView *informationenLabel;
 @property (weak, nonatomic) IBOutlet UILabel *datumLabel;
