@@ -10,7 +10,7 @@
 
 @implementation RaabeAppVertretungsplan
 
-// only call asyncronously (ex.: http://stackoverflow.com/a/8091994)
+// only call asyncronously (ex.: http://stackoverflow.com/a/8091994 )
 - (void)getVertretungsplanWithFilter:(NSString *)filter
 {
     // not a nice solution, I know...
