@@ -15,8 +15,8 @@
     _vertreterLabel.text = [_vertretung objectForKey:@"vtr_lehrer"];
     _artLabel.text = [[_vertretung objectForKey:@"vtr_art"] objectForKey:@"name"];
     _klassenLabel.text = [_vertretung objectForKey:@"klassen"];
-    _raumLabel.text = [_vertretung objectForKey:@"fach"];
-    _fachLabel.text = [_vertretung objectForKey:@"stunde"];
+    _raumLabel.text = [_vertretung objectForKey:@"vtr_raum"];
+    _fachLabel.text = [_vertretung objectForKey:@"fach"];
     _absenterLehrerLabel.text = [_vertretung objectForKey:@"absenter_lehrer"];
     _leNachLabel.text = [_vertretung objectForKey:@"le_nach"];
     _vtrTextLabel.text = [_vertretung objectForKey:@"vtr_text"];

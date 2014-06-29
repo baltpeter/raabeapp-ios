@@ -21,7 +21,7 @@
     BOOL networkErrorAlertShown = false;
     
     NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
-    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@", "http://oneloveforlife.de/rs/api.php?format=json&password=", password, "&date=web&filter=", filter];
+    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter];
     NSURL *url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@""]];    
     NSError *downloadError;
     NSData *vertretungsplanData = [[NSData alloc] initWithContentsOfURL: url options:NSDataReadingUncached error:&downloadError];
@@ -67,6 +67,7 @@
     
     NSArray *vplanData = [_vertretungsplan objectForKey:@"data"];
     NSMutableDictionary *sortedVertretungsplan = [[NSMutableDictionary alloc] init];
+    NSMutableArray *sortedVertretungsplanKeys = [[NSMutableArray alloc] init];
     
     for(int i = 0; i < vplanData.count; i++) {
         NSString *klassen = [[vplanData objectAtIndex:i] objectForKey:@"klassen"];
@@ -80,11 +81,12 @@
             NSMutableArray *toInsert = [[NSMutableArray alloc] init];
             [toInsert addObject:[vplanData objectAtIndex:i]];
             [sortedVertretungsplan setObject:toInsert forKey:klassen];
+            [sortedVertretungsplanKeys addObject:klassen];
         }
     }
     
     _sortedVertretungsplan = sortedVertretungsplan;
-    _sortedVertretungsplanKeys = [_sortedVertretungsplan allKeys];
+    _sortedVertretungsplanKeys = sortedVertretungsplanKeys;
 }
 
 @end
