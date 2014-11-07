@@ -20,44 +20,52 @@
     
     BOOL networkErrorAlertShown = false;
     
-    NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
-    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter];
-    NSURL *url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@""]];    
+    NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_password"];
+    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
+    NSURL *url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@""]];
     NSError *downloadError;
-    NSData *vertretungsplanData = [[NSData alloc] initWithContentsOfURL: url options:NSDataReadingUncached error:&downloadError];
+    NSData *vertretungsplanData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&downloadError];
     
     if(downloadError) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Netzwerkfehler"
-                              message:downloadError.localizedDescription
-                              delegate:nil
-                              cancelButtonTitle:@"Ok"
-                              otherButtonTitles:nil, nil];
-        [alert show];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:@"Netzwerkfehler"
+                                  message:downloadError.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"Ok"
+                                  otherButtonTitles:nil, nil];
+            [alert show];
+        });
         
         networkErrorAlertShown = true;
     }
     else {
         if([[[NSString alloc] initWithData:vertretungsplanData encoding:NSUTF8StringEncoding] isEqualToString:@"[wrong_pw]"]) {
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Falsches Passwort"
-                                  message:@"Das eingebene Passwort ist nicht korrekt. Bitte ändern Sie es in den Einstellungen."
-                                  delegate:nil
-                                  cancelButtonTitle:@"Ok"
-                                  otherButtonTitles:nil, nil];
-            [alert show];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:@"Falsches Passwort"
+                                      message:@"Das eingebene Passwort ist nicht korrekt. Bitte ändern Sie es in den Einstellungen."
+                                      delegate:nil
+                                      cancelButtonTitle:@"Ok"
+                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
         }
     }
     
     if(vertretungsplanData.description == nil) {
         if(!networkErrorAlertShown) {
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Netzwerkfehler"
-                                  message:@"Ein unerwarteter Netzwerkfehler ist aufgetreten. Bitte versuchen Sie es später erneut."
-                                  delegate:nil
-                                  cancelButtonTitle:@"Ok"
-                                  otherButtonTitles:nil, nil];
-            [alert show];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:@"Netzwerkfehler"
+                                      message:@"Ein unerwarteter Netzwerkfehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+                                      delegate:nil
+                                      cancelButtonTitle:@"Ok"
+                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
+            
+            networkErrorAlertShown = true;
         }
     }
     else {

@@ -14,7 +14,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Key</key>
-			<string>password</string>
+			<string>raabeapp_password</string>
 			<key>Title</key>
 			<string>Passwort</string>
 			<key>AutocorrectionType</key>
@@ -34,7 +34,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Key</key>
-			<string>filter</string>
+			<string>raabeapp_filter</string>
 			<key>Title</key>
 			<string>Filter</string>
 			<key>AutocorrectionType</key>
@@ -46,9 +46,9 @@
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>DefaultValue</key>
-			<string>z.B.: 10G4, Pz</string>
+			<string>z.B.: 10G4, 11Bg, Pz</string>
 			<key>Key</key>
-			<string>pwInfo</string>
+			<string>raabeapp_pwInfo</string>
 		</dict>
 	</array>
 	<key>StringsTable</key>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B305C98119436B9F004581BA /* RaabeAppVertretungsplan.m in Sources */ = {isa = PBXBuildFile; fileRef = B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */; };
+		B32A13CA1A0D61420033BE97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32A13C91A0D61420033BE97 /* Images.xcassets */; };
 		B3C1093A191562C1004DFE05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10939191562C1004DFE05 /* Foundation.framework */; };
 		B3C1093C191562C1004DFE05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093B191562C1004DFE05 /* CoreGraphics.framework */; };
 		B3C1093E191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
@@ -15,7 +16,6 @@
 		B3C1094A191562C1004DFE05 /* RaabeAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C10949191562C1004DFE05 /* RaabeAppAppDelegate.m */; };
 		B3C1094D191562C1004DFE05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3C1094B191562C1004DFE05 /* Main.storyboard */; };
 		B3C10950191562C1004DFE05 /* RaabeAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C1094F191562C1004DFE05 /* RaabeAppViewController.m */; };
-		B3C10952191562C1004DFE05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C10951191562C1004DFE05 /* Images.xcassets */; };
 		B3C10959191562C1004DFE05 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10958191562C1004DFE05 /* XCTest.framework */; };
 		B3C1095A191562C1004DFE05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10939191562C1004DFE05 /* Foundation.framework */; };
 		B3C1095B191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
@@ -45,6 +45,7 @@
 		B305C97919435645004581BA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplan.h; sourceTree = "<group>"; };
 		B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungsplan.m; sourceTree = "<group>"; };
+		B32A13C91A0D61420033BE97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3C10936191562C1004DFE05 /* RaabeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaabeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C10939191562C1004DFE05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3C1093B191562C1004DFE05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -57,7 +58,6 @@
 		B3C1094C191562C1004DFE05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3C1094E191562C1004DFE05 /* RaabeAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaabeAppViewController.h; sourceTree = "<group>"; };
 		B3C1094F191562C1004DFE05 /* RaabeAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaabeAppViewController.m; sourceTree = "<group>"; };
-		B3C10951191562C1004DFE05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B3C10957191562C1004DFE05 /* RaabeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaabeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C10958191562C1004DFE05 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B3C10960191562C1004DFE05 /* RaabeAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaabeAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				B3F5CC3D1945B0C2000FC9C1 /* RaabeAppHomeViewController.m */,
 				B3C1094E191562C1004DFE05 /* RaabeAppViewController.h */,
 				B3C1094F191562C1004DFE05 /* RaabeAppViewController.m */,
-				B3C10951191562C1004DFE05 /* Images.xcassets */,
+				B32A13C91A0D61420033BE97 /* Images.xcassets */,
 				B3C10940191562C1004DFE05 /* Supporting Files */,
 			);
 			path = RaabeApp;
@@ -246,6 +246,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Benjamin Altpeter";
 				TargetAttributes = {
+					B3C10935191562C1004DFE05 = {
+						DevelopmentTeam = A22AU83DG6;
+					};
 					B3C10956191562C1004DFE05 = {
 						TestTargetID = B3C10935191562C1004DFE05;
 					};
@@ -277,8 +280,8 @@
 			files = (
 				B3F5CC401945C26B000FC9C1 /* Settings.bundle in Resources */,
 				B3F5CC531945D12A000FC9C1 /* home.png in Resources */,
-				B3C10952191562C1004DFE05 /* Images.xcassets in Resources */,
 				B3C1094D191562C1004DFE05 /* Main.storyboard in Resources */,
+				B32A13CA1A0D61420033BE97 /* Images.xcassets in Resources */,
 				B3F5CC591945D1F7000FC9C1 /* vertretungsplan.png in Resources */,
 				B3F5CC551945D178000FC9C1 /* about.png in Resources */,
 			);
@@ -415,10 +418,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RaabeApp/RaabeApp-Prefix.pch";
 				INFOPLIST_FILE = "RaabeApp/RaabeApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -428,10 +435,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RaabeApp/RaabeApp-Prefix.pch";
 				INFOPLIST_FILE = "RaabeApp/RaabeApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

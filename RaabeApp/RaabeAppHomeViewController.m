@@ -72,15 +72,15 @@
 - (void)reload
 {
     _errorLabel.text = @"";
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
-        [vplan getVertretungsplanWithFilter:(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"]];
+        [vplan getVertretungsplanWithFilter:(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"]];
         
-        _vertretungsplan = [vplan vertretungsplan];
-        _sortedVertretungsplan = [vplan sortedVertretungsplan];
-        _sortedVertretungsplanKeys = [vplan sortedVertretungsplanKeys];
         dispatch_sync(dispatch_get_main_queue(), ^{
+            _vertretungsplan = [vplan vertretungsplan];
+            _sortedVertretungsplan = [vplan sortedVertretungsplan];
+            _sortedVertretungsplanKeys = [vplan sortedVertretungsplanKeys];
             [self reloadGui];
         });
     });
@@ -88,7 +88,8 @@
 
 - (void) reloadGui
 {
-    _informationenLabel.text = [[self.vertretungsplan objectForKey:@"info_data"] stringByReplacingOccurrencesOfString: @";;" withString: @"\n"];
+    NSString *informationenText = [[self.vertretungsplan objectForKey:@"info_data"] stringByReplacingOccurrencesOfString: @";;" withString: @"\n"];
+    _informationenLabel.text = [self stringByStrippingHTML:informationenText];
     [_homeTableView reloadData];
     
     if([[self.vertretungsplan objectForKey:@"data"] count] > 0) {
@@ -96,11 +97,11 @@
     }
     else {
         _datumLabel.text = @"";
-        if([(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"] isEqual: @""] || [(NSString *)[NSUserDefaults standardUserDefaults] valueForKey:@"filter"] == nil) {
+        if([(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"] isEqual: @""] || [(NSString *)[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"] == nil) {
             _errorLabel.text = @"Keine Vertretungen.";
         }
         else {
-            _errorLabel.text = [NSString stringWithFormat:@"Keine Vertretungen für \"%@\".", (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"filter"]];
+            _errorLabel.text = [NSString stringWithFormat:@"Keine Vertretungen für \"%@\".", (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"]];
         }
         
     }
@@ -115,6 +116,18 @@
 {
     [super viewWillAppear:animated];
     [self reload];
+}
+
+// see http://stackoverflow.com/a/4886998/3211062
+- (NSString *)stringByStrippingHTML:(NSString *)string {
+    NSRange r;
+    if(!string) {
+        string = @"";
+    }
+    while ((r = [string rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound) {
+        string = [string stringByReplacingCharactersInRange:r withString:@""];
+    }
+    return string;
 }
 
 @end

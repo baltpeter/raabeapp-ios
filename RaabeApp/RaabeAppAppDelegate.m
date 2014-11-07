@@ -8,8 +8,6 @@
 
 #import "RaabeAppAppDelegate.h"
 #import "RaabeAppVertretungsplanViewController.h"
-// TEMP
-#import "RaabeAppVertretungsplan.h"
 
 @implementation RaabeAppAppDelegate
 {
@@ -19,7 +17,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
@@ -32,6 +29,28 @@
     [homeTabBarItem initWithTitle:@"Home" image:[UIImage imageNamed:@"home"] selectedImage:nil];
     [vertretungsplanTabBarItem initWithTitle:@"Vertretungsplan" image:[UIImage imageNamed:@"vertretungsplan"] selectedImage:nil];
     [aboutTabBarItem initWithTitle:@"Über" image:[UIImage imageNamed:@"about"] selectedImage:nil];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        NSString *urlString = [NSString stringWithFormat:@"%s%@", "http://raabeschule.de/vplanupdate/notification.php?client=ios&version=", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+        NSURL *url = [NSURL URLWithString:urlString];
+        NSError *downloadError;
+        NSData *notificationData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&downloadError];
+        NSError *jsonParsingError = nil;
+        NSDictionary *notification = [NSJSONSerialization JSONObjectWithData:notificationData options:0 error:&jsonParsingError];
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            if(notification != nil) {
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:[notification valueForKey:@"title"]
+                                      message:[notification valueForKey:@"message"]
+                                      delegate:nil
+                                      cancelButtonTitle:@"Ok"
+                                      otherButtonTitles:nil, nil];
+                [alert show];
+            }
+        });
+    });
     
     return YES;
 }
@@ -56,7 +75,6 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
