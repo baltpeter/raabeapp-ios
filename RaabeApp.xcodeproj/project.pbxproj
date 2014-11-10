@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B305C98119436B9F004581BA /* RaabeAppVertretungsplan.m in Sources */ = {isa = PBXBuildFile; fileRef = B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */; };
 		B32A13CA1A0D61420033BE97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32A13C91A0D61420033BE97 /* Images.xcassets */; };
+		B3A977A41A11201A00548E9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3A977A61A11201A00548E9B /* Localizable.strings */; };
 		B3C1093A191562C1004DFE05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10939191562C1004DFE05 /* Foundation.framework */; };
 		B3C1093C191562C1004DFE05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093B191562C1004DFE05 /* CoreGraphics.framework */; };
 		B3C1093E191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
@@ -46,6 +47,10 @@
 		B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplan.h; sourceTree = "<group>"; };
 		B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungsplan.m; sourceTree = "<group>"; };
 		B32A13C91A0D61420033BE97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B3A977A31A111FEF00548E9B /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		B3A977A71A11202400548E9B /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3A977AA1A112F2100548E9B /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B3A977AB1A1133BB00548E9B /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B3C10936191562C1004DFE05 /* RaabeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaabeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C10939191562C1004DFE05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B3C1093B191562C1004DFE05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -140,6 +145,7 @@
 				B3F5CC3F1945C26B000FC9C1 /* Settings.bundle */,
 				B3C10948191562C1004DFE05 /* RaabeAppAppDelegate.h */,
 				B3C10949191562C1004DFE05 /* RaabeAppAppDelegate.m */,
+				B3A977A61A11201A00548E9B /* Localizable.strings */,
 				B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */,
 				B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */,
 				B3C1094B191562C1004DFE05 /* Main.storyboard */,
@@ -261,6 +267,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = B3C1092D191562C1004DFE05;
 			productRefGroup = B3C10937191562C1004DFE05 /* Products */;
@@ -281,6 +288,7 @@
 				B3F5CC401945C26B000FC9C1 /* Settings.bundle in Resources */,
 				B3F5CC531945D12A000FC9C1 /* home.png in Resources */,
 				B3C1094D191562C1004DFE05 /* Main.storyboard in Resources */,
+				B3A977A41A11201A00548E9B /* Localizable.strings in Resources */,
 				B32A13CA1A0D61420033BE97 /* Images.xcassets in Resources */,
 				B3F5CC591945D1F7000FC9C1 /* vertretungsplan.png in Resources */,
 				B3F5CC551945D178000FC9C1 /* about.png in Resources */,
@@ -332,10 +340,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B3A977A61A11201A00548E9B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3A977A71A11202400548E9B /* en */,
+				B3A977AA1A112F2100548E9B /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B3C1094B191562C1004DFE05 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B3C1094C191562C1004DFE05 /* Base */,
+				B3A977A31A111FEF00548E9B /* de */,
+				B3A977AB1A1133BB00548E9B /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -359,7 +378,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gymnasium Raabeschule Braunschweig (A22AU83DG6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gymnasium Raabeschule Braunschweig (A22AU83DG6)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -377,6 +397,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "efb76a4d-187c-4bfc-b8e7-db11785aa21e";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -397,7 +418,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gymnasium Raabeschule Braunschweig (A22AU83DG6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gymnasium Raabeschule Braunschweig (A22AU83DG6)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -408,6 +430,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "efb76a4d-187c-4bfc-b8e7-db11785aa21e";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

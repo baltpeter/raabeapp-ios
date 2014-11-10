@@ -26,9 +26,9 @@
     UITabBarItem *vertretungsplanTabBarItem = [tabBar.items objectAtIndex:1];
     UITabBarItem *aboutTabBarItem = [tabBar.items objectAtIndex:2];
     
-    [homeTabBarItem initWithTitle:@"Home" image:[UIImage imageNamed:@"home"] selectedImage:nil];
-    [vertretungsplanTabBarItem initWithTitle:@"Vertretungsplan" image:[UIImage imageNamed:@"vertretungsplan"] selectedImage:nil];
-    [aboutTabBarItem initWithTitle:@"Über" image:[UIImage imageNamed:@"about"] selectedImage:nil];
+    [homeTabBarItem initWithTitle:NSLocalizedString(@"Home", nil) image:[UIImage imageNamed:@"home"] selectedImage:nil];
+    [vertretungsplanTabBarItem initWithTitle:NSLocalizedString(@"Vertretungsplan", nil) image:[UIImage imageNamed:@"vertretungsplan"] selectedImage:nil];
+    [aboutTabBarItem initWithTitle:NSLocalizedString(@"About", nil) image:[UIImage imageNamed:@"about"] selectedImage:nil];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
@@ -45,7 +45,7 @@
                                       initWithTitle:[notification valueForKey:@"title"]
                                       message:[notification valueForKey:@"message"]
                                       delegate:nil
-                                      cancelButtonTitle:@"Ok"
+                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                       otherButtonTitles:nil, nil];
                 [alert show];
             }

@@ -22,6 +22,7 @@
     
     NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_password"];
     NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@""]];
     NSError *downloadError;
     NSData *vertretungsplanData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&downloadError];
@@ -29,10 +30,10 @@
     if(downloadError) {
         dispatch_async(dispatch_get_main_queue(), ^{
             UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:@"Netzwerkfehler"
+                                  initWithTitle:NSLocalizedString(@"Network error", nil)
                                   message:downloadError.localizedDescription
                                   delegate:nil
-                                  cancelButtonTitle:@"Ok"
+                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                   otherButtonTitles:nil, nil];
             [alert show];
         });
@@ -43,10 +44,10 @@
         if([[[NSString alloc] initWithData:vertretungsplanData encoding:NSUTF8StringEncoding] isEqualToString:@"[wrong_pw]"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle:@"Falsches Passwort"
-                                      message:@"Das eingebene Passwort ist nicht korrekt. Bitte ändern Sie es in den Einstellungen."
+                                      initWithTitle:NSLocalizedString(@"Wrong password", nil)
+                                      message:NSLocalizedString(@"The password you entered is incorrect. Please change it in the settings panel.", nil)
                                       delegate:nil
-                                      cancelButtonTitle:@"Ok"
+                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                       otherButtonTitles:nil, nil];
                 [alert show];
             });
@@ -57,10 +58,10 @@
         if(!networkErrorAlertShown) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle:@"Netzwerkfehler"
-                                      message:@"Ein unerwarteter Netzwerkfehler ist aufgetreten. Bitte versuchen Sie es später erneut."
+                                      initWithTitle:NSLocalizedString(@"Network error", nil)
+                                      message:NSLocalizedString(@"An unexpected network error has occurred. Please try again later.", nil)
                                       delegate:nil
-                                      cancelButtonTitle:@"Ok"
+                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                       otherButtonTitles:nil, nil];
                 [alert show];
             });
@@ -80,7 +81,7 @@
     for(int i = 0; i < vplanData.count; i++) {
         NSString *klassen = [[vplanData objectAtIndex:i] objectForKey:@"klassen"];
         if([klassen isEqualToString:@""]) {
-            klassen = @"--";
+            klassen = NSLocalizedString(@"--", nil);
         }
         if([sortedVertretungsplan objectForKey:klassen]) {
             [[sortedVertretungsplan objectForKey:klassen] addObject:[vplanData objectAtIndex:i]];

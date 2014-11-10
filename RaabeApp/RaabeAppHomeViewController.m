@@ -93,17 +93,16 @@
     [_homeTableView reloadData];
     
     if([[self.vertretungsplan objectForKey:@"data"] count] > 0) {
-        _datumLabel.text = [NSString stringWithFormat:@"Vertretungen %@", [self.vertretungsplan objectForKey:@"date"]];
+        _datumLabel.text = [NSString stringWithFormat:NSLocalizedString(@"Substitutions %@", nil), [self.vertretungsplan objectForKey:@"date"]];
     }
     else {
         _datumLabel.text = @"";
         if([(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"] isEqual: @""] || [(NSString *)[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"] == nil) {
-            _errorLabel.text = @"Keine Vertretungen.";
+            _errorLabel.text = NSLocalizedString(@"No substitutions.", nil);
         }
         else {
-            _errorLabel.text = [NSString stringWithFormat:@"Keine Vertretungen für \"%@\".", (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"]];
+            _errorLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No substitutions for \"%@\".", nil), (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"]];
         }
-        
     }
 }
 
