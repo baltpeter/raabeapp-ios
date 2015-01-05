@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B305C98119436B9F004581BA /* RaabeAppVertretungsplan.m in Sources */ = {isa = PBXBuildFile; fileRef = B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */; };
 		B32A13CA1A0D61420033BE97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32A13C91A0D61420033BE97 /* Images.xcassets */; };
-		B3A977A41A11201A00548E9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B3A977A61A11201A00548E9B /* Localizable.strings */; };
+		B33A11EE1A5B345100E033B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B33A11F01A5B345100E033B2 /* Localizable.strings */; };
 		B3C1093A191562C1004DFE05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C10939191562C1004DFE05 /* Foundation.framework */; };
 		B3C1093C191562C1004DFE05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093B191562C1004DFE05 /* CoreGraphics.framework */; };
 		B3C1093E191562C1004DFE05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3C1093D191562C1004DFE05 /* UIKit.framework */; };
@@ -47,9 +47,13 @@
 		B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplan.h; sourceTree = "<group>"; };
 		B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaabeAppVertretungsplan.m; sourceTree = "<group>"; };
 		B32A13C91A0D61420033BE97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B33A11EF1A5B345100E033B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B33A11F11A5B345600E033B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B33A11F21A5B345B00E033B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B33A11F41A5B36CD00E033B2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
+		B33A11F61A5B36CE00E033B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Root.strings; sourceTree = "<group>"; };
+		B33A11F71A5B36CF00E033B2 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Root.strings; sourceTree = "<group>"; };
 		B3A977A31A111FEF00548E9B /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		B3A977A71A11202400548E9B /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B3A977AA1A112F2100548E9B /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3A977AB1A1133BB00548E9B /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B3C10936191562C1004DFE05 /* RaabeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaabeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3C10939191562C1004DFE05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,11 +145,11 @@
 		B3C1093F191562C1004DFE05 /* RaabeApp */ = {
 			isa = PBXGroup;
 			children = (
+				B33A11F51A5B36CD00E033B2 /* Root.strings */,
 				B3F5CC431945CE4F000FC9C1 /* res */,
 				B3F5CC3F1945C26B000FC9C1 /* Settings.bundle */,
 				B3C10948191562C1004DFE05 /* RaabeAppAppDelegate.h */,
 				B3C10949191562C1004DFE05 /* RaabeAppAppDelegate.m */,
-				B3A977A61A11201A00548E9B /* Localizable.strings */,
 				B305C97F19436B9F004581BA /* RaabeAppVertretungsplan.h */,
 				B305C98019436B9F004581BA /* RaabeAppVertretungsplan.m */,
 				B3C1094B191562C1004DFE05 /* Main.storyboard */,
@@ -170,6 +174,7 @@
 		B3C10940191562C1004DFE05 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B33A11F01A5B345100E033B2 /* Localizable.strings */,
 				B3C10941191562C1004DFE05 /* RaabeApp-Info.plist */,
 				B3C10945191562C1004DFE05 /* main.m */,
 				B3C10947191562C1004DFE05 /* RaabeApp-Prefix.pch */,
@@ -288,7 +293,7 @@
 				B3F5CC401945C26B000FC9C1 /* Settings.bundle in Resources */,
 				B3F5CC531945D12A000FC9C1 /* home.png in Resources */,
 				B3C1094D191562C1004DFE05 /* Main.storyboard in Resources */,
-				B3A977A41A11201A00548E9B /* Localizable.strings in Resources */,
+				B33A11EE1A5B345100E033B2 /* Localizable.strings in Resources */,
 				B32A13CA1A0D61420033BE97 /* Images.xcassets in Resources */,
 				B3F5CC591945D1F7000FC9C1 /* vertretungsplan.png in Resources */,
 				B3F5CC551945D178000FC9C1 /* about.png in Resources */,
@@ -340,13 +345,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B3A977A61A11201A00548E9B /* Localizable.strings */ = {
+		B33A11F01A5B345100E033B2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B3A977A71A11202400548E9B /* en */,
-				B3A977AA1A112F2100548E9B /* de */,
+				B33A11EF1A5B345100E033B2 /* Base */,
+				B33A11F11A5B345600E033B2 /* en */,
+				B33A11F21A5B345B00E033B2 /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B33A11F51A5B36CD00E033B2 /* Root.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B33A11F41A5B36CD00E033B2 /* en */,
+				B33A11F61A5B36CE00E033B2 /* Base */,
+				B33A11F71A5B36CF00E033B2 /* de */,
+			);
+			name = Root.strings;
+			path = Settings.bundle;
 			sourceTree = "<group>";
 		};
 		B3C1094B191562C1004DFE05 /* Main.storyboard */ = {

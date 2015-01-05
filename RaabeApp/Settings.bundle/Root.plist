@@ -8,7 +8,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Erforderliche Einstellungen</string>
+			<string>Required settings</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -16,7 +16,7 @@
 			<key>Key</key>
 			<string>raabeapp_password</string>
 			<key>Title</key>
-			<string>Passwort</string>
+			<string>Password</string>
 			<key>AutocorrectionType</key>
 			<string>No</string>
 			<key>AutocapitalizationType</key>
@@ -28,7 +28,7 @@
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Optionale Einstellungen</string>
+			<string>Optional settings</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -46,7 +46,7 @@
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
 			<key>DefaultValue</key>
-			<string>z.B.: 10G4, 11Bg, Pz</string>
+			<string>e.g.: 10G4, 11Bg, Pz</string>
 			<key>Key</key>
 			<string>raabeapp_pwInfo</string>
 		</dict>
