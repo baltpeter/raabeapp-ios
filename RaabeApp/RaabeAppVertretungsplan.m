@@ -21,7 +21,7 @@
     BOOL networkErrorAlertShown = false;
     
     NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_password"];
-    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
+    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://oneloveforlife.de/rs/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL *url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@""]];
     NSError *downloadError;

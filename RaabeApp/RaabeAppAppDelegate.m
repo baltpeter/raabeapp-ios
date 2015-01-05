@@ -18,6 +18,8 @@
 {
     // Override point for customization after application launch.
     
+    // Configure tab bar
+    
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
     [tabBar setTintColor:[UIColor redColor]];
@@ -30,9 +32,16 @@
     [vertretungsplanTabBarItem initWithTitle:NSLocalizedString(@"Vertretungsplan", nil) image:[UIImage imageNamed:@"vertretungsplan"] selectedImage:nil];
     [aboutTabBarItem initWithTitle:NSLocalizedString(@"About", nil) image:[UIImage imageNamed:@"about"] selectedImage:nil];
     
+    // Access notification API to check for (and optionally display) notifications
+    
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"read_notifications"] == nil) {
+        NSMutableArray *read_notifications = [[NSMutableArray alloc] init];
+        [[NSUserDefaults standardUserDefaults] setValue:read_notifications forKey:@"read_notifications"];
+    }
+    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        NSString *urlString = [NSString stringWithFormat:@"%s%@", "http://raabeschule.de/vplanupdate/notification.php?client=ios&version=", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+        NSString *urlString = [NSString stringWithFormat:@"%s%@", "http://oneloveforlife.de/rs/notification.php?client=ios&version=", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
         NSURL *url = [NSURL URLWithString:urlString];
         NSError *downloadError;
         NSData *notificationData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&downloadError];
@@ -41,13 +50,24 @@
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             if(notification != nil) {
-                UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle:[notification valueForKey:@"title"]
-                                      message:[notification valueForKey:@"message"]
-                                      delegate:nil
-                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                      otherButtonTitles:nil, nil];
-                [alert show];
+                NSMutableArray *read_notifications = [[[NSUserDefaults standardUserDefaults] valueForKey:@"read_notifications"] mutableCopy];
+                NSNumber *notification_id = (NSNumber *)[notification valueForKey:@"id"];
+
+                if([[notification valueForKey:@"permanent"] boolValue] == YES || ![read_notifications containsObject:notification_id]) {
+                    UIAlertView *alert = [[UIAlertView alloc]
+                                          initWithTitle:[notification valueForKey:@"title"]
+                                          message:[notification valueForKey:@"message"]
+                                          delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                          otherButtonTitles:nil, nil];
+                    [alert show];
+                    
+                    if([[notification valueForKey:@"permanent"] boolValue] == NO) {
+                        [read_notifications addObject:notification_id];
+                        [[NSUserDefaults standardUserDefaults] setObject:read_notifications forKey:@"read_notifications"];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    }
+                }
             }
         });
     });
