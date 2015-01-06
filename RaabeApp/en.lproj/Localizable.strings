@@ -13,7 +13,7 @@
 
 "Network error" = "Network error";
 "Wrong password" = "Wrong password";
-"The password you entered is incorrect. Please change it in the settings panel." = "The password you entered is incorrect. Please change it in the settings panel.";
+"The password you entered is incorrect. Please change it in the settings panel." = "The password you entered is incorrect. Please change it in the settings panel (i.e. the Settings app).";
 "An unexpected network error has occurred. Please try again later." = "An unexpected network error has occurred. Please try again later.";
 "--" = "--";
 

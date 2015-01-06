@@ -34,9 +34,9 @@
     
     // Access notification API to check for (and optionally display) notifications
     
-    if([[NSUserDefaults standardUserDefaults] valueForKey:@"read_notifications"] == nil) {
+    if([[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_read_notifications"] == nil) {
         NSMutableArray *read_notifications = [[NSMutableArray alloc] init];
-        [[NSUserDefaults standardUserDefaults] setValue:read_notifications forKey:@"read_notifications"];
+        [[NSUserDefaults standardUserDefaults] setValue:read_notifications forKey:@"raabeapp_read_notifications"];
     }
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -50,7 +50,7 @@
         
         dispatch_sync(dispatch_get_main_queue(), ^{
             if(notification != nil) {
-                NSMutableArray *read_notifications = [[[NSUserDefaults standardUserDefaults] valueForKey:@"read_notifications"] mutableCopy];
+                NSMutableArray *read_notifications = [[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_read_notifications"] mutableCopy];
                 NSNumber *notification_id = (NSNumber *)[notification valueForKey:@"id"];
 
                 if([[notification valueForKey:@"permanent"] boolValue] == YES || ![read_notifications containsObject:notification_id]) {
@@ -64,7 +64,7 @@
                     
                     if([[notification valueForKey:@"permanent"] boolValue] == NO) {
                         [read_notifications addObject:notification_id];
-                        [[NSUserDefaults standardUserDefaults] setObject:read_notifications forKey:@"read_notifications"];
+                        [[NSUserDefaults standardUserDefaults] setObject:read_notifications forKey:@"raabeapp_read_notifications"];
                         [[NSUserDefaults standardUserDefaults] synchronize];
                     }
                 }
