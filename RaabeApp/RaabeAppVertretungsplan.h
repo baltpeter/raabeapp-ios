@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RaabeAppVertretungsplanDelegate.h"
 
 @interface RaabeAppVertretungsplan : NSObject
 
@@ -15,6 +16,6 @@
 @property (nonatomic, strong) NSArray *sortedVertretungsplanKeys;
 @property (nonatomic) BOOL networkErrorAlertShown;
 
-- (void)getVertretungsplanWithFilter:(NSString *)filter;
+- (void)getVertretungsplanWithFilter:(NSString *)filter AndInformDelegate:(id <RaabeAppVertretungsplanDelegate>)delegate;
 
 @end

@@ -19,4 +19,4 @@
 
 "Substitutions %@" = "Substitutions %@";
 "No substitutions." = "No substitutions.";
-"No substitutions for \"%@\"." = "No substitutions for \"%@\".";
+"No substitutions for \"%@\" on %@." = "No substitutions for \"%@\" on %@.";

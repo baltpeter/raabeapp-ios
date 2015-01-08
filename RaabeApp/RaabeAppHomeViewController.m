@@ -69,21 +69,18 @@
     }
 }
 
+- (void)receiveNewVertretungsplan:(RaabeAppVertretungsplan *)vertretungsplan {
+    _vertretungsplan = [vertretungsplan vertretungsplan];
+    _sortedVertretungsplan = [vertretungsplan sortedVertretungsplan];
+    _sortedVertretungsplanKeys = [vertretungsplan sortedVertretungsplanKeys];
+    [self reloadGui];
+}
+
 - (void)reload
 {
     _errorLabel.text = @"";
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
-        [vplan getVertretungsplanWithFilter:(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"]];
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            _vertretungsplan = [vplan vertretungsplan];
-            _sortedVertretungsplan = [vplan sortedVertretungsplan];
-            _sortedVertretungsplanKeys = [vplan sortedVertretungsplanKeys];
-            [self reloadGui];
-        });
-    });
+    RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
+    [vplan getVertretungsplanWithFilter:(NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"] AndInformDelegate:self];
 }
 
 - (void) reloadGui
@@ -101,7 +98,7 @@
             _errorLabel.text = NSLocalizedString(@"No substitutions.", nil);
         }
         else {
-            _errorLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No substitutions for \"%@\".", nil), (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"]];
+            _errorLabel.text = [NSString stringWithFormat:NSLocalizedString(@"No substitutions for \"%@\" on %@.", nil), (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"], [self.vertretungsplan objectForKey:@"date"]];
         }
     }
 }

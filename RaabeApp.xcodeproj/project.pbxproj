@@ -65,6 +65,7 @@
 		B33A11FD1A5C71E600E033B2 /* home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@3x.png"; sourceTree = "<group>"; };
 		B33A12001A5C734E00E033B2 /* vertretungsplan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vertretungsplan@2x.png"; sourceTree = "<group>"; };
 		B33A12011A5C734E00E033B2 /* vertretungsplan@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vertretungsplan@3x.png"; sourceTree = "<group>"; };
+		B33A12041A5F083400E033B2 /* RaabeAppVertretungsplanDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaabeAppVertretungsplanDelegate.h; sourceTree = "<group>"; };
 		B3A977A31A111FEF00548E9B /* de */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		B3A977AB1A1133BB00548E9B /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		B3C10936191562C1004DFE05 /* RaabeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaabeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +178,7 @@
 				B3F5CC3D1945B0C2000FC9C1 /* RaabeAppHomeViewController.m */,
 				B3C1094E191562C1004DFE05 /* RaabeAppViewController.h */,
 				B3C1094F191562C1004DFE05 /* RaabeAppViewController.m */,
+				B33A12041A5F083400E033B2 /* RaabeAppVertretungsplanDelegate.h */,
 				B32A13C91A0D61420033BE97 /* Images.xcassets */,
 				B3C10940191562C1004DFE05 /* Supporting Files */,
 			);

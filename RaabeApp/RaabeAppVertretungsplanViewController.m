@@ -52,27 +52,25 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-        if([segue.identifier isEqualToString:@"segueFromVertretungsplanToDetailView"])
-        {
-            RaabeAppDetailViewController *controller = (RaabeAppDetailViewController *)segue.destinationViewController;
-            controller.vertretung = [[_sortedVertretungsplan objectForKey:[_sortedVertretungsplanKeys objectAtIndex:_selectedTableSection]] objectAtIndex:_selectedTableRow];
-        }
+    if([segue.identifier isEqualToString:@"segueFromVertretungsplanToDetailView"])
+    {
+        RaabeAppDetailViewController *controller = (RaabeAppDetailViewController *)segue.destinationViewController;
+        controller.vertretung = [[_sortedVertretungsplan objectForKey:[_sortedVertretungsplanKeys objectAtIndex:_selectedTableSection]] objectAtIndex:_selectedTableRow];
+    }
+}
+
+- (void)receiveNewVertretungsplan:(RaabeAppVertretungsplan *)vertretungsplan {
+    _vertretungsplan = [vertretungsplan vertretungsplan];
+    _sortedVertretungsplan = [vertretungsplan sortedVertretungsplan];
+    _sortedVertretungsplanKeys = [vertretungsplan sortedVertretungsplanKeys];
+    [self.tableView reloadData];
 }
 
 - (void)reload
 {
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^{
-        RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
-        [vplan getVertretungsplanWithFilter:@""];
-        
-        _vertretungsplan = [vplan vertretungsplan];
-        _sortedVertretungsplan = [vplan sortedVertretungsplan];
-        _sortedVertretungsplanKeys = [vplan sortedVertretungsplanKeys];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    });
+    
+    RaabeAppVertretungsplan *vplan = [[RaabeAppVertretungsplan alloc] init];
+    [vplan getVertretungsplanWithFilter:@"" AndInformDelegate:self];
 }
 
 - (IBAction)reloadButtonPressed:(id)sender

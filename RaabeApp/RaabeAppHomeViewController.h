@@ -11,8 +11,9 @@
 #import "RaabeAppVertretungsplan.h"
 #import "RaabeAppGenericTableViewController.h"
 #import "RaabeAppDetailViewController.h"
+#import "RaabeAppVertretungsplanDelegate.h"
 
-@interface RaabeAppHomeViewController : UIViewController
+@interface RaabeAppHomeViewController : UIViewController <RaabeAppVertretungsplanDelegate>
 
 @property (nonatomic, strong) NSDictionary *vertretungsplan;
 @property (nonatomic, strong) NSMutableDictionary *sortedVertretungsplan;
@@ -24,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *informationenLabel;
 @property (weak, nonatomic) IBOutlet UILabel *datumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+
+- (void)receiveNewVertretungsplan:(RaabeAppVertretungsplan *)vertretungsplan;
 
 @end
