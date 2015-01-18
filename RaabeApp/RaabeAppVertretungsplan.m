@@ -15,16 +15,18 @@
     if(filter == nil) { filter = @""; }
     
     NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_password"];
-    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://oneloveforlife.de/rs/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
+    NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
+    NSLog(urlString);
+    urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@""];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url = [NSURL URLWithString:[urlString stringByReplacingOccurrencesOfString:@" " withString:@""]];
+    NSLog([urlString stringByReplacingOccurrencesOfString:@" " withString:@""]);
+    NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         BOOL networkErrorAlertShown = false;
         
         if(error) {
-            NSLog(@"there was an error: %@", [error localizedDescription]);
             dispatch_async(dispatch_get_main_queue(), ^{
                 UIAlertView *alert = [[UIAlertView alloc]
                                       initWithTitle:NSLocalizedString(@"Network error", nil)
@@ -39,7 +41,6 @@
         }
         else {
             if([[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] isEqualToString:@"[wrong_pw]"]) {
-                NSLog(@"The password is wrong.");
                 dispatch_async(dispatch_get_main_queue(), ^{
                     UIAlertView *alert = [[UIAlertView alloc]
                                           initWithTitle:NSLocalizedString(@"Wrong password", nil)

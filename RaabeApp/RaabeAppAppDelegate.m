@@ -41,7 +41,7 @@
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        NSString *urlString = [NSString stringWithFormat:@"%s%@", "http://oneloveforlife.de/rs/notification.php?client=ios&version=", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+        NSString *urlString = [NSString stringWithFormat:@"%s%@", "http://raabeschule.de/vplanupdate/notification.php?client=ios&version=", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
         NSURL *url = [NSURL URLWithString:urlString];
         NSError *downloadError;
         NSData *notificationData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&downloadError];
