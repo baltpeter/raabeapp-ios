@@ -72,9 +72,20 @@
         });
     });
     
+    // an easter egg
+    if([[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_filter"] containsString:@"1415926535"]) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"You found the egg!"
+                              message:@"You seem to know your maths trivia (that particular irrational number being the most important, of course). Good on yer, mate! Never forget: Mathematics is the part of science you could continue to do if you woke up tomorrow and discovered the universe was gone."
+                              delegate:nil
+                              cancelButtonTitle:@"I understand."
+                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
