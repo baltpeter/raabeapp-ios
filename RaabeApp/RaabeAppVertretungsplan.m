@@ -25,38 +25,45 @@
         
         if(error) {
             NSLog(@"there was an error: %@", [error localizedDescription]);
-            UIAlertView *alert = [[UIAlertView alloc]
-                                  initWithTitle:NSLocalizedString(@"Network error", nil)
-                                  message:error.localizedDescription
-                                  delegate:nil
-                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                  otherButtonTitles:nil, nil];
-            [alert show];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle:NSLocalizedString(@"Network error", nil)
+                                      message:error.localizedDescription
+                                      delegate:nil
+                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                      otherButtonTitles:nil, nil];
+                [alert show];
+            });
             
             networkErrorAlertShown = true;
         }
         else {
             if([[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] isEqualToString:@"[wrong_pw]"]) {
                 NSLog(@"The password is wrong.");
-                UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle:NSLocalizedString(@"Wrong password", nil)
-                                      message:NSLocalizedString(@"The password you entered is incorrect. Please change it in the settings panel.", nil)
-                                      delegate:nil
-                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                      otherButtonTitles:nil, nil];
-                [alert show];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView *alert = [[UIAlertView alloc]
+                                          initWithTitle:NSLocalizedString(@"Wrong password", nil)
+                                          message:NSLocalizedString(@"The password you entered is incorrect. Please change it in the settings panel.", nil)
+                                          delegate:delegate
+                                          cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                          otherButtonTitles:NSLocalizedString(@"Open Settings.app", nil), nil];
+                    [alert setTag:401];
+                    [alert show];
+                });
             }
         }
         
         if(data.description == nil) {
             if(!networkErrorAlertShown) {
-                UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle:NSLocalizedString(@"Network error", nil)
-                                      message:NSLocalizedString(@"An unexpected network error has occurred. Please try again later.", nil)
-                                      delegate:nil
-                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                      otherButtonTitles:nil, nil];
-                [alert show];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UIAlertView *alert = [[UIAlertView alloc]
+                                          initWithTitle:NSLocalizedString(@"Network error", nil)
+                                          message:NSLocalizedString(@"An unexpected network error has occurred. Please try again later.", nil)
+                                          delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                          otherButtonTitles:nil, nil];
+                    [alert show];
+                });
                 
                 networkErrorAlertShown = true;
             }

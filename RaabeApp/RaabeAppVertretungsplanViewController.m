@@ -73,6 +73,15 @@
     [vplan getVertretungsplanWithFilter:@"" AndInformDelegate:self];
 }
 
+// respond to the user clicking "Open Settings.app" when a wrong password is entered
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if([alertView tag] == 401) {    // it's the pw error alert
+        if(buttonIndex == 1) {      // and they clicked "Open Settings.app".
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        }
+    }
+}
+
 - (IBAction)reloadButtonPressed:(id)sender
 {
     [self reload];

@@ -10,6 +10,8 @@
 "Vertretungsplan" = "Vertretungsplan";
 "About" = "Über";
 "OK" = "Ok";
+"Open Settings.app" = "Einstellungen öffnen";
+"Cancel" = "Abbrechen";
 
 "Network error" = "Netzwerkfehler";
 "Wrong password" = "Falsches Password";

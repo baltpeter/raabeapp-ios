@@ -13,7 +13,7 @@
 #import "RaabeAppDetailViewController.h"
 #import "RaabeAppVertretungsplanDelegate.h"
 
-@interface RaabeAppHomeViewController : UIViewController <RaabeAppVertretungsplanDelegate>
+@interface RaabeAppHomeViewController : UIViewController <RaabeAppVertretungsplanDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSDictionary *vertretungsplan;
 @property (nonatomic, strong) NSMutableDictionary *sortedVertretungsplan;

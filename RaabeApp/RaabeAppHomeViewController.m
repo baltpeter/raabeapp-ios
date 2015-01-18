@@ -114,6 +114,15 @@
     [self reload];
 }
 
+// respond to the user clicking "Open Settings.app" when a wrong password is entered
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if([alertView tag] == 401) {    // it's the pw error alert
+        if(buttonIndex == 1) {      // and they clicked "Open Settings.app".
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        }
+    }
+}
+
 // see http://stackoverflow.com/a/4886998/3211062
 - (NSString *)stringByStrippingHTML:(NSString *)string {
     NSRange r;
