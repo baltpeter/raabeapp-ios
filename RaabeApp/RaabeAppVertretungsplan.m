@@ -12,14 +12,13 @@
 
 - (void)getVertretungsplanWithFilter:(NSString *)filter AndInformDelegate:(id <RaabeAppVertretungsplanDelegate>)delegate
 {
-    if(filter == nil) { filter = @""; }
-    
     NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_password"];
+    if(filter == nil) { filter = @""; }
+    if(password == nil) { password = @""; }
+    
     NSString *urlString = [NSString stringWithFormat:@"%s%@%s%@%s", "http://raabeschule.de/vplanupdate/api.php?format=json&password=", password, "&date=web&filter=", filter, "&client=ios"];
-    NSLog(urlString);
     urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@""];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog([urlString stringByReplacingOccurrencesOfString:@" " withString:@""]);
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -71,7 +70,9 @@
         }
         else {
             NSError *jsonParsingError = nil;
-            _vertretungsplan = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
+            if(data) {
+                _vertretungsplan = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
+            }
         }
         
         NSArray *vplanData = [_vertretungsplan objectForKey:@"data"];
