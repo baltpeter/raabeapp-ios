@@ -45,31 +45,33 @@
         NSURL *url = [NSURL URLWithString:urlString];
         NSError *downloadError;
         NSData *notificationData = [[NSData alloc] initWithContentsOfURL:url options:NSDataReadingUncached error:&downloadError];
-        NSError *jsonParsingError = nil;
-        NSDictionary *notification = [NSJSONSerialization JSONObjectWithData:notificationData options:0 error:&jsonParsingError];
-        
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            if(notification != nil) {
-                NSMutableArray *read_notifications = [[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_read_notifications"] mutableCopy];
-                NSNumber *notification_id = (NSNumber *)[notification valueForKey:@"id"];
-
-                if([[notification valueForKey:@"permanent"] boolValue] == YES || ![read_notifications containsObject:notification_id]) {
-                    UIAlertView *alert = [[UIAlertView alloc]
-                                          initWithTitle:[notification valueForKey:@"title"]
-                                          message:[notification valueForKey:@"message"]
-                                          delegate:nil
-                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                          otherButtonTitles:nil, nil];
-                    [alert show];
+        if(notificationData) {
+            NSError *jsonParsingError = nil;
+            NSDictionary *notification = [NSJSONSerialization JSONObjectWithData:notificationData options:0 error:&jsonParsingError];
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                if(notification != nil) {
+                    NSMutableArray *read_notifications = [[[NSUserDefaults standardUserDefaults] valueForKey:@"raabeapp_read_notifications"] mutableCopy];
+                    NSNumber *notification_id = (NSNumber *)[notification valueForKey:@"id"];
                     
-                    if([[notification valueForKey:@"permanent"] boolValue] == NO) {
-                        [read_notifications addObject:notification_id];
-                        [[NSUserDefaults standardUserDefaults] setObject:read_notifications forKey:@"raabeapp_read_notifications"];
-                        [[NSUserDefaults standardUserDefaults] synchronize];
+                    if([[notification valueForKey:@"permanent"] boolValue] == YES || ![read_notifications containsObject:notification_id]) {
+                        UIAlertView *alert = [[UIAlertView alloc]
+                                              initWithTitle:[notification valueForKey:@"title"]
+                                              message:[notification valueForKey:@"message"]
+                                              delegate:nil
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                              otherButtonTitles:nil, nil];
+                        [alert show];
+                        
+                        if([[notification valueForKey:@"permanent"] boolValue] == NO) {
+                            [read_notifications addObject:notification_id];
+                            [[NSUserDefaults standardUserDefaults] setObject:read_notifications forKey:@"raabeapp_read_notifications"];
+                            [[NSUserDefaults standardUserDefaults] synchronize];
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     });
     
     // an easter egg
